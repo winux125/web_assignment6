@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a class="web" href="index.html">Assignment 6</a>
+
+        <ul class="nav-list">
+            <li class="nav-element"><a href="task0.html">Task 0</a></li>
+            <li class="nav-element"><a href="task1.html">Task 1</a></li>
+            <li class="nav-element"><a href="task2.html">Task 2</a></li>
+            <li class="nav-element"><a href="task3.html">Task 3</a></li>
+            <li class="nav-element"><a href="task4.html">Task 4</a></li>
+            <li class="nav-element"><a href="task5.html">Task 5</a></li>
+            <li class="nav-element"><a href="task6.html">Task 6</a></li>
+            <li class="nav-element"><a href="task7.html">Task 7</a></li>
+            <li class="nav-element"><a href="task8.html">Task 8</a></li>
+            <li class="nav-element"><a href="task9.html">Task 9</a></li>
+            <li class="nav-element"><a href="task10.html">Task 10</a></li>
+            <li class="nav-element"><a href="task11.html">Task 11</a></li>
+        </ul>
+    </nav>
+
+    <h2>Image Gallery</h2>
+
+    <div id="gallery">
+        <img class="thumb" src="assets/Untitled.png" alt="Untitled">
+        <img class="thumb" src="assets/Untitled1.png" alt="Untitled 1">
+        <img class="thumb" src="assets/Untitled2.jpg" alt="Untitled 2">
+        <img class="thumb" src="assets/Untitled3.jpg" alt="Untitled 3">
+        <img class="thumb" src="assets/wallpaperEdit.jpg" alt="Wallpaper Edit">
+    </div>
+
+    <div id="lightbox">
+        <span id="close" aria-label="Close">&times;</span>
+        <div id="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <p id="caption"></p>
+        </div>
+    </div>
+
+    <script>
+        $(".thumb").each(function (i) {
+            $(this).delay(i * 150).fadeTo(500, 0.7);
+        });
+
+        $("#gallery")
+            .on("mouseenter", ".thumb", function () {
+                $(this).stop(true).fadeTo(200, 1);
+            })
+            .on("mouseleave", ".thumb", function () {
+                $(this).stop(true).fadeTo(200, 0.7);
+            });
+
+        $("#gallery").on("click", ".thumb", function () {
+            const src = $(this).attr("src");
+            const alt = $(this).attr("alt");
+            const targetWidth = Math.min(700, $(window).width() * 0.9);
+
+            $("#lightbox-img")
+                .stop(true)
+                .attr({ src: src, alt: alt })
+                .css({ width: "200px", opacity: 0 });
+            $("#caption").text(alt);
+
+            $("#lightbox").stop(true).fadeIn(300);
+            $("#lightbox-img").animate({ width: targetWidth + "px", opacity: 1 }, 500);
+        });
+
+        function closeLightbox() {
+            $("#lightbox").stop(true).fadeOut(300);
+        }
+
+        $("#lightbox").on("click", closeLightbox);
+
+        $(document).on("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+
+</html>
