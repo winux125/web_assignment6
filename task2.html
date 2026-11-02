@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav>
+        <a class="web" href="index.html">Assignment 6</a>
+
+        <ul class="nav-list">
+            <li class="nav-element"><a href="task0.html">Task 0</a></li>
+            <li class="nav-element"><a href="task1.html">Task 1</a></li>
+            <li class="nav-element"><a href="task2.html">Task 2</a></li>
+            <li class="nav-element"><a href="task3.html">Task 3</a></li>
+            <li class="nav-element"><a href="task4.html">Task 4</a></li>
+            <li class="nav-element"><a href="task5.html">Task 5</a></li>
+            <li class="nav-element"><a href="task6.html">Task 6</a></li>
+            <li class="nav-element"><a href="task7.html">Task 7</a></li>
+            <li class="nav-element"><a href="task8.html">Task 8</a></li>
+            <li class="nav-element"><a href="task9.html">Task 9</a></li>
+            <li class="nav-element"><a href="task10.html">Task 10</a></li>
+        </ul>
+
+    </nav>
+    <p>Hide & Seek</p>
+    <button id="hide">Hide</button> <button id="show">Show</button> <button id="toggle">Toggle</button>
+
+
+
+    <script>
+        $("#hide").on("click",()=>{
+            $("p").hide();
+
+        })
+        $("#show").on("click",()=>{
+            $("p").show()
+        })
+
+        $("#toggle").on("click", () => {
+            $("p").toggle();
+        });
+    </script>
+</body>
+
+</html>
