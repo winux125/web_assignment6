@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a class="web" href="index.html">Assignment 6</a>
+
+        <ul class="nav-list">
+            <li class="nav-element"><a href="task0.html">Task 0</a></li>
+            <li class="nav-element"><a href="task1.html">Task 1</a></li>
+            <li class="nav-element"><a href="task2.html">Task 2</a></li>
+            <li class="nav-element"><a href="task3.html">Task 3</a></li>
+            <li class="nav-element"><a href="task4.html">Task 4</a></li>
+            <li class="nav-element"><a href="task5.html">Task 5</a></li>
+            <li class="nav-element"><a href="task6.html">Task 6</a></li>
+            <li class="nav-element"><a href="task7.html">Task 7</a></li>
+            <li class="nav-element"><a href="task8.html">Task 8</a></li>
+            <li class="nav-element"><a href="task9.html">Task 9</a></li>
+            <li class="nav-element"><a href="task10.html">Task 10</a></li>
+        </ul>
+    </nav>
+
+    <h2>Basic Animation</h2>
+
+    <div class="controls">
+        <button id="animate">Animate</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <div id="stage">
+        <div id="square"></div>
+    </div>
+
+    <script>
+        $("#animate").on("click", () => {
+            $("#square").stop(true).animate({
+                width: "160px",
+                height: "160px",
+                left: "300px",
+                top: "100px"
+            }, 800);
+        });
+
+        $("#reset").on("click", () => {
+            $("#square").stop(true).animate({
+                width: "80px",
+                height: "80px",
+                left: "0px",
+                top: "0px"
+            }, 800);
+        });
+    </script>
+</body>
+
+</html>
