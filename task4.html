@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a class="web" href="index.html">Assignment 6</a>
+
+        <ul class="nav-list">
+            <li class="nav-element"><a href="task0.html">Task 0</a></li>
+            <li class="nav-element"><a href="task1.html">Task 1</a></li>
+            <li class="nav-element"><a href="task2.html">Task 2</a></li>
+            <li class="nav-element"><a href="task3.html">Task 3</a></li>
+            <li class="nav-element"><a href="task4.html">Task 4</a></li>
+            <li class="nav-element"><a href="task5.html">Task 5</a></li>
+            <li class="nav-element"><a href="task6.html">Task 6</a></li>
+            <li class="nav-element"><a href="task7.html">Task 7</a></li>
+            <li class="nav-element"><a href="task8.html">Task 8</a></li>
+            <li class="nav-element"><a href="task9.html">Task 9</a></li>
+            <li class="nav-element"><a href="task10.html">Task 10</a></li>
+        </ul>
+    </nav>
+
+    <h2>Collapsible Panel</h2>
+
+    <div class="controls">
+        <button id="up">Slide Up</button>
+        <button id="down">Slide Down</button>
+        <button id="toggle">Slide Toggle</button>
+    </div>
+
+    <div id="panel">
+        <h3>Panel title</h3>
+        <p>This content slides up and down. jQuery animates the height of the panel
+            to collapse or expand it.</p>
+    </div>
+
+    <script>
+        $("#up").on("click", () => {
+            $("#panel").slideUp(400);
+        });
+
+        $("#down").on("click", () => {
+            $("#panel").slideDown(400);
+        });
+
+        $("#toggle").on("click", () => {
+            $("#panel").slideToggle(400);
+        });
+    </script>
+</body>
+
+</html>
